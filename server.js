@@ -9,6 +9,7 @@ const httpPort = 8000; //httpPort という名前の変数に 8000 という値�
 // google.com/search の /search の部分や、
 // github.com/sho96/mediapipeTutorial の /sho96/mediapipeTutorial の部分のことである。
 app.get("/", (req, resp) => {
+  resp.setHeader('Content-Type', 'text/html');
   resp.status(200).send(readFileSync("./index.html", {encoding: "utf-8"}));
   return;
 });

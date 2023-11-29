@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ページのタイトル</title>
+</head>
+<body>
+  <h1>Hello world!!</h1>
+  <h2>小さいテキスト</h2>
+  <p>段落１</p>
+  <p>段落２</p>
+  <p>段落３</p>
+  <input type="text" id="text-input"/>
+  <button onclick="changeValue();">反映</button>
+  <h3 id="result">---</h3>
+</body>
+<script>
+  function changeValue(){
+    const inputField = document.querySelector("#text-input");
+    const inputValue = inputField.value;
+    document.querySelector("#result").value = `入力された値：${inputValue}`;
+  }
+</script>
+</html>

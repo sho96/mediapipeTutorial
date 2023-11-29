@@ -13,6 +13,22 @@ app.get("/", (req, resp) => {
   resp.status(200).send(readFileSync("./index.html", {encoding: "utf-8"}));
   return;
 });
+app.get("/phone.jpg", (req, resp) => {
+  resp.setHeader('Content-Type', 'text/html');
+  resp.status(200).send(readFileSync("./phone.jpg"));
+  return;
+});
+app.get("/restaurant.jpg", (req, resp) => {
+  resp.setHeader('Content-Type', 'text/html');
+  resp.status(200).send(readFileSync("./restaurant.jpg"));
+  return;
+});
+app.get("/highway.jpg", (req, resp) => {
+  resp.setHeader('Content-Type', 'text/html');
+  resp.status(200).send(readFileSync("./highway.jpg"));
+  return;
+});
+
 
 //作ったサーバーの骨組みから、ポート番号をhttpPort (今回は8000) でサーバーを公開する。
 httpServer = http.createServer(app);

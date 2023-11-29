@@ -10,6 +10,7 @@ const httpPort = 8000; //httpPort という名前の変数に 8000 という値�
 // github.com/sho96/mediapipeTutorial の /sho96/mediapipeTutorial の部分のことである。
 app.get("/", (req, resp) => {
   resp.status(200).send(readFileSync("./index.html", {encoding:, "utf-8"}));
+  return;
 });
 
 //作ったサーバーの骨組みから、ポート番号をhttpPort (今回は8000) でサーバーを公開する。

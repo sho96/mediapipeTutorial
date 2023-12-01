@@ -10,16 +10,19 @@
   <div id="liveView" class="videoView">
     <button id="webcamButton" class="mdc-button mdc-button--raised" style="width: 10rem; height: 2rem;">
       <span class="mdc-button__ripple"></span>
-      <span class="mdc-button__label">ENABLE WEBCAM</span>
+      <span class="mdc-button__label">カメラを使う</span>
     </button>
     <video id="webcam" autoplay playsinline></video>
   </div>
-  <h1 id="detection">---Detections---</h1>
+  <h1 id="detection">---検出したもの---</h1>
   <img src="/phone.jpg" alt="" id="image1" style="max-width: 90vw; margin-left: 4vw; max-height: 50vh;">
   <img src="/highway.jpg" alt="" id="image2" style="max-width: 90vw; margin-left: 4vw; max-height: 50vh;">
   <img src="/restaurant.jpg" alt="" id="image3" style="max-width: 90vw; margin-left: 4vw; max-height: 50vh;">
 </body>
 <style>
+  body{
+    font-family: Arial;
+  }
   img{
     margin: 10px;
     border-radius: 15px;
@@ -46,6 +49,8 @@ const objectDetector = await ObjectDetector.createFromOptions(vision, {
   scoreThreshold: 0.5,
   runningMode: runningMode
 });
+
+
 
 document.querySelector("#image1").addEventListener("click", detectInImage)
 document.querySelector("#image2").addEventListener("click", detectInImage)
